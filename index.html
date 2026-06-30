@@ -26,12 +26,14 @@
     top:14px;left:14px;
     z-index:25;
     display:flex;
+    flex-direction:column;
     align-items:center;
-    gap:8px;
+    gap:0;
+    width:100px;
     background:rgba(0,0,0,.55);
     border:1.5px solid #FFD700;
     border-radius:12px;
-    padding:6px 10px 6px 6px;
+    padding:8px 6px 10px;
     opacity:0;
     transition:opacity .6s, box-shadow .2s;
     cursor:pointer;
@@ -40,7 +42,7 @@
   #dt-card.vis{opacity:1}
   #dt-card:hover{box-shadow:0 0 18px rgba(255,215,0,.5)}
   #dt-photo{
-    width:52px;height:62px;
+    width:88px;height:104px;
     border-radius:8px;
     overflow:hidden;
     border:2px solid #FFD700;
@@ -53,11 +55,13 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:flex-start;
-    height:62px;
+    align-items:center;
+    text-align:center;
+    width:100%;
+    margin-top:6px;
   }
-  #dt-badge{font-family:"Barlow Condensed",sans-serif;font-size:9px;letter-spacing:2px;color:rgba(255,215,0,.7);text-transform:uppercase;margin-bottom:2px;line-height:1}
-  #dt-name{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.15;white-space:nowrap}
+  #dt-badge{font-family:"Barlow Condensed",sans-serif;font-size:9px;letter-spacing:2px;color:rgba(255,215,0,.7);text-transform:uppercase;margin-bottom:2px;line-height:1;text-align:center}
+  #dt-name{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.15;text-align:center;white-space:normal}
 
   /* Reveal */
   #reveal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:40;text-align:center;pointer-events:none;width:180px;display:flex;flex-direction:column;align-items:center}
@@ -71,7 +75,7 @@
   #rname .n{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase}
   #rname .r{font-size:11px;color:rgba(255,255,255,.7);letter-spacing:1px}
 
-  /* Fichas campo — tamaño aumentado a 88px */
+  /* Fichas campo */
   .fc{position:absolute;width:100px;border-radius:9px;overflow:hidden;border:2.5px solid #FFD700;box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 12px rgba(255,215,0,.3);opacity:0;transform:scale(0) translateY(-15px);z-index:15;cursor:pointer;transition:box-shadow .2s}
   .fc:hover{box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 26px rgba(255,215,0,.75)}
   .fc img{width:100%;display:block}
@@ -89,18 +93,18 @@
   /* Modal zoom */
   #modal{position:absolute;inset:0;z-index:80;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;border-radius:20px}
   #modal.open{opacity:1;pointer-events:all}
-  #modal-inner{position:relative;text-align:center;transform:scale(.7);transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center}
+  #modal-inner{position:relative;text-align:center;transform:scale(.7);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
   #modal.open #modal-inner{transform:scale(1)}
   #modal-card{width:240px;border-radius:16px;overflow:hidden;border:3px solid #FFD700;box-shadow:0 0 60px rgba(255,215,0,.5)}
   #modal-card img{width:100%;display:block}
   #modal-card .modal-placeholder{width:100%;height:290px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
   #modal-card .modal-placeholder svg{opacity:.3}
   #modal-card .modal-placeholder span{font-family:"Barlow Condensed",sans-serif;font-size:13px;color:rgba(255,215,0,.5);letter-spacing:2px;text-transform:uppercase}
-  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:block;width:240px;text-align:center}
+  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:inline-block}
   #modal-name .mn{font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase}
   #modal-name .mr{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:1px}
   #modal-badge{margin-top:6px;display:inline-block;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:20px;padding:3px 14px;font-family:"Barlow Condensed",sans-serif;font-size:11px;letter-spacing:2px;color:rgba(255,215,0,.7);text-transform:uppercase}
-  #modal-close{margin-top:10px;display:block;width:240px;text-align:center;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;padding:8px 20px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:background .2s}
+  #modal-close{margin-top:10px;display:inline-block;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;padding:6px 20px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:background .2s}
   #modal-close:hover{background:rgba(255,215,0,.3)}
 
   #muteBtn{
@@ -112,6 +116,7 @@
   }
   #muteBtn:hover{background:rgba(255,215,0,.2);transform:scale(1.1)}
 
+  /* Jefferson: rc vuela hacia el dt-card */
   #rc.fly-to-dt{
     animation:flyToDT .75s cubic-bezier(.4,0,.2,1) forwards;
   }
@@ -148,6 +153,7 @@
   <div class="title">Dir. Planeación y Procesos</div>
 </div>
 
+<!-- DT Card esquina superior izquierda -->
 <div id="dt-card">
   <div id="dt-photo">
     <img src="Rector.png" alt="Jefferson Arias">
@@ -167,37 +173,46 @@
 </div>
 
 <!--
-  POSICIONES:
-  Fila 1 (arriba):   Omar        → centro          (fc0)
-  Fila 2 (media):    Alfredo(izq)· Karol(centro)  · Carlos(der)   ← INTERCAMBIADOS
-  Fila 3 (baja):     Diego(izq)  · Incógnita(cen) · Paula(der)    ← INTERCAMBIADOS
+  POSICIONES SEGÚN SKETCH:
+  Fila 1 (arriba):   Omar        → centro
+  Fila 2 (media):    Carlos(izq) · Karol(centro) · Alfredo(der)
+  Fila 3 (baja):     Paula(izq)  · Incógnita(centro) · Diego(der)
+
+  El orden en players[] debe coincidir con fc0…fc6:
+    fc0 = Omar       (fila 1, centro)
+    fc1 = Carlos     (fila 2, izquierda)
+    fc2 = Karol      (fila 2, centro)
+    fc3 = Alfredo    (fila 2, derecha)
+    fc4 = Paula      (fila 3, izquierda)
+    fc5 = Incógnita  (fila 3, centro)
+    fc6 = Diego      (fila 3, derecha)
 -->
 
 <!-- Fila 1: Omar (centro-arriba) -->
-<div class="fc" id="fc0" style="left:calc(50% - 44px); top:8%;">
+<div class="fc" id="fc0" style="left:calc(50% - 36px); top:8%;">
   <img src="Omar.png" alt="Omar Ricaurte">
 </div>
 
-<!-- Fila 2: Alfredo (izq) · Karol (centro) · Carlos (der) -->
-<div class="fc" id="fc1" style="left:calc(22% - 44px); top:31%;">
-  <img src="Alfredo.png" alt="Alfredo Ávila">
-</div>
-<div class="fc" id="fc2" style="left:calc(50% - 44px); top:31%;">
-  <img src="Karol.png" alt="Karol Muñoz">
-</div>
-<div class="fc" id="fc3" style="left:calc(78% - 44px); top:31%;">
+<!-- Fila 2: Carlos (izq) · Karol (centro) · Alfredo (der) -->
+<div class="fc" id="fc1" style="left:calc(22% - 36px); top:31%;">
   <img src="Carlos.png" alt="Carlos Valero">
 </div>
-
-<!-- Fila 3: Diego (izq) · Incógnita (centro) · Paula (der) -->
-<div class="fc" id="fc4" style="left:calc(22% - 44px); top:57%;">
-  <img src="Diego.png" alt="Diego Villareal">
+<div class="fc" id="fc2" style="left:calc(50% - 36px); top:31%;">
+  <img src="Karol.png" alt="Karol Muñoz">
 </div>
-<div class="fc" id="fc5" style="left:calc(50% - 44px); top:63%;">
+<div class="fc" id="fc3" style="left:calc(78% - 36px); top:31%;">
+  <img src="Alfredo.png" alt="Alfredo Ávila">
+</div>
+
+<!-- Fila 3: Paula (izq) · Incógnita (centro) · Diego (der) -->
+<div class="fc" id="fc4" style="left:calc(22% - 36px); top:57%;">
+  <img src="Paula.png" alt="Paula Blanco">
+</div>
+<div class="fc" id="fc5" style="left:calc(50% - 36px); top:63%;">
   <img src="Incognita.png" alt="Incógnita">
 </div>
-<div class="fc" id="fc6" style="left:calc(78% - 44px); top:57%;">
-  <img src="Paula.png" alt="Paula Blanco">
+<div class="fc" id="fc6" style="left:calc(78% - 36px); top:57%;">
+  <img src="Diego.png" alt="Diego Villareal">
 </div>
 
 <div id="footer">
@@ -228,7 +243,7 @@
     <audio id="bgMusic" loop>
       <source src="musica.mp3" type="audio/mpeg">
     </audio>
-    <div id="modal-badge"></div>
+    <div id="modal-badge"></div><br>
     <button id="modal-close">✕ Cerrar</button>
   </div>
 </div>
@@ -237,22 +252,22 @@
 
 <script>
 // ─── Datos del equipo ────────────────────────────────────────────────────────
-// Orden coincide con fc0…fc6 en el HTML
+// El orden aquí DEBE coincidir con fc0…fc6 definidos en el HTML
 const players = [
-  // fc0 — Omar (centro arriba)
+  // fc0
   { name:"OMAR RICAURTE",    role:"Director de Planeación y Procesos",  img:"Omar.png"       },
-  // fc1 — Alfredo (fila 2, izquierda) ← antes Carlos
-  { name:"ALFREDO ÁVILA",    role:"Coord. Inteligencia de Negocios",    img:"Alfredo.png"    },
-  // fc2 — Karol (fila 2, centro)
-  { name:"KAROL MUÑOZ",      role:"Coordinadora de Calidad y Procesos", img:"Karol.png"      },
-  // fc3 — Carlos (fila 2, derecha) ← antes Alfredo
+  // fc1
   { name:"CARLOS VALERO",    role:"Coord. Procesos de Información",     img:"Carlos.png"     },
-  // fc4 — Diego (fila 3, izquierda) ← antes Paula
-  { name:"DIEGO VILLAREAL",  role:"Prof. Desarrollo Estratégico",       img:"Diego.png"      },
-  // fc5 — Incógnita (fila 3, centro)
-  { name:"¿NOMBRE?",         role:"Prof. Desarrollo Estratégico",       img:"Incognita.png"  },
-  // fc6 — Paula (fila 3, derecha) ← antes Diego
+  // fc2
+  { name:"KAROL MUÑOZ",      role:"Coordinadora de Calidad y Procesos", img:"Karol.png"      },
+  // fc3
+  { name:"ALFREDO ÁVILA",    role:"Coord. Inteligencia de Negocios",    img:"Alfredo.png"    },
+  // fc4
   { name:"PAULA BLANCO",     role:"Prof. Desarrollo Estratégico",       img:"Paula.png"      },
+  // fc5
+  { name:"¿NOMBRE?",         role:"Prof. Desarrollo Estratégico",       img:"Incognita.png"  },
+  // fc6
+  { name:"DIEGO VILLAREAL", role:"Prof. Desarrollo Estratégico",       img:"Diego.png"      },
 ];
 
 // ─── Referencias DOM ─────────────────────────────────────────────────────────
@@ -302,6 +317,7 @@ function bindCard(fcEl, p) {
   });
 }
 
+// DT siempre clickeable (Jefferson Arias no está en la animación del campo)
 dtCard.addEventListener("click", () => {
   openModal("JEFFERSON ARIAS", "Rector", "Rector.png");
 });
@@ -344,11 +360,13 @@ async function run() {
   rname.style.opacity = "1";
   await sleep(1600);
 
+  // Ocultar nombre y animar vuelo al dt-card
   rname.style.opacity = "0";
   rc.classList.remove("show");
   rc.classList.add("fly-to-dt");
   await sleep(500);
 
+  // dt-card aparece mientras la carta vuela hacia él
   rc.classList.remove("fly-to-dt");
   dtCard.classList.add("vis");
   await sleep(400);
