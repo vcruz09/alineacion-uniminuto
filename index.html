@@ -100,10 +100,10 @@
   #modal-card .modal-placeholder{width:100%;height:290px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
   #modal-card .modal-placeholder svg{opacity:.3}
   #modal-card .modal-placeholder span{font-family:"Barlow Condensed",sans-serif;font-size:13px;color:rgba(255,215,0,.5);letter-spacing:2px;text-transform:uppercase}
-  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:inline-block}
-  #modal-name .mn{font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase}
-  #modal-name .mr{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:1px}
-  #modal-badge{margin-top:6px;display:inline-block;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:20px;padding:3px 14px;font-family:"Barlow Condensed",sans-serif;font-size:11px;letter-spacing:2px;color:rgba(255,215,0,.7);text-transform:uppercase}
+  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:inline-block;text-align:center;width:max-content;max-width:280px}
+  #modal-name .mn{font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase;text-align:center}
+  #modal-name .mr{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:1px;text-align:center}
+  #modal-badge{display:none}
   #modal-close{margin-top:10px;display:inline-block;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;padding:6px 20px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:background .2s}
   #modal-close:hover{background:rgba(255,215,0,.3)}
 
@@ -189,29 +189,29 @@
 -->
 
 <!-- Fila 1: Omar (centro-arriba) -->
-<div class="fc" id="fc0" style="left:calc(50% - 36px); top:8%;">
+<div class="fc" id="fc0" style="left:calc(50% - 50px); top:7%;">
   <img src="Omar.png" alt="Omar Ricaurte">
 </div>
 
 <!-- Fila 2: Carlos (izq) · Karol (centro) · Alfredo (der) -->
-<div class="fc" id="fc1" style="left:calc(22% - 36px); top:31%;">
+<div class="fc" id="fc1" style="left:calc(29.2% - 50px); top:30%;">
   <img src="Carlos.png" alt="Carlos Valero">
 </div>
-<div class="fc" id="fc2" style="left:calc(50% - 36px); top:31%;">
+<div class="fc" id="fc2" style="left:calc(50% - 50px); top:30%;">
   <img src="Karol.png" alt="Karol Muñoz">
 </div>
-<div class="fc" id="fc3" style="left:calc(78% - 36px); top:31%;">
+<div class="fc" id="fc3" style="left:calc(70.8% - 50px); top:30%;">
   <img src="Alfredo.png" alt="Alfredo Ávila">
 </div>
 
 <!-- Fila 3: Paula (izq) · Incógnita (centro) · Diego (der) -->
-<div class="fc" id="fc4" style="left:calc(22% - 36px); top:57%;">
+<div class="fc" id="fc4" style="left:calc(29.2% - 50px); top:56%;">
   <img src="Paula.png" alt="Paula Blanco">
 </div>
-<div class="fc" id="fc5" style="left:calc(50% - 36px); top:63%;">
+<div class="fc" id="fc5" style="left:calc(50% - 50px); top:56%;">
   <img src="Incognita.png" alt="Incógnita">
 </div>
-<div class="fc" id="fc6" style="left:calc(78% - 36px); top:57%;">
+<div class="fc" id="fc6" style="left:calc(70.8% - 50px); top:56%;">
   <img src="Diego.png" alt="Diego Villareal">
 </div>
 
@@ -243,7 +243,6 @@
     <audio id="bgMusic" loop>
       <source src="musica.mp3" type="audio/mpeg">
     </audio>
-    <div id="modal-badge"></div><br>
     <button id="modal-close">✕ Cerrar</button>
   </div>
 </div>
