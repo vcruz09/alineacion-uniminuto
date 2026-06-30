@@ -181,49 +181,40 @@
   Fila 1 (arriba):   Omar        → centro
   Fila 2 (media):    Carlos(izq) · Karol(centro) · Alfredo(der)
   Fila 3 (baja):     Paula(izq)  · Incógnita(centro) · Diego(der)
-
-  El orden en players[] debe coincidir con fc0…fc6:
-    fc0 = Omar       (fila 1, centro)
-    fc1 = Carlos     (fila 2, izquierda)
-    fc2 = Karol      (fila 2, centro)
-    fc3 = Alfredo    (fila 2, derecha)
-    fc4 = Paula      (fila 3, izquierda)
-    fc5 = Incógnita  (fila 3, centro)
-    fc6 = Diego      (fila 3, derecha)
 -->
 
 <!-- Fila 1: Omar (centro-arriba) -->
 <div class="fc" id="fc0" style="left:calc(50% - 50px); top:9%;">
   <div class="fc-img"><img src="Omar.png" alt="Omar Ricaurte"></div>
-  <div class="fc-label"><div class="Omar Ricaurte"></div><div class="Director de Planeación y Procesos"></div></div>
+  <div class="fc-label"><div class="fc-name">Omar Ricaurte</div><div class="fc-role">Director de Planeación y Procesos</div></div>
 </div>
 
 <!-- Fila 2: Carlos (izq) · Karol (centro) · Alfredo (der) -->
 <div class="fc" id="fc1" style="left:calc(29.2% - 50px); top:33%;">
   <div class="fc-img"><img src="Carlos.png" alt="Carlos Valero"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">Carlos Valero</div><div class="fc-role">Coord. Procesos de Información</div></div>
 </div>
 <div class="fc" id="fc2" style="left:calc(50% - 50px); top:33%;">
   <div class="fc-img"><img src="Karol.png" alt="Karol Muñoz"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">Karol Muñoz</div><div class="fc-role">Coordinadora de Calidad y Procesos</div></div>
 </div>
 <div class="fc" id="fc3" style="left:calc(70.8% - 50px); top:33%;">
   <div class="fc-img"><img src="Alfredo.png" alt="Alfredo Ávila"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">Alfredo Ávila</div><div class="fc-role">Coord. Inteligencia de Negocios</div></div>
 </div>
 
 <!-- Fila 3: Paula (izq) · Incógnita (centro) · Diego (der) -->
 <div class="fc" id="fc4" style="left:calc(29.2% - 50px); top:58%;">
   <div class="fc-img"><img src="Paula.png" alt="Paula Blanco"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">Paula Blanco</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
 </div>
 <div class="fc" id="fc5" style="left:calc(50% - 50px); top:62%;">
   <div class="fc-img"><img src="Incognita.png" alt="Incógnita"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">¿Nombre?</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
 </div>
 <div class="fc" id="fc6" style="left:calc(70.8% - 50px); top:58%;">
   <div class="fc-img"><img src="Diego.png" alt="Diego Villareal"></div>
-  <div class="fc-label"><div class="fc-name"></div><div class="fc-role"></div></div>
+  <div class="fc-label"><div class="fc-name">Diego Villareal</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
 </div>
 
 <div id="footer">
@@ -262,22 +253,14 @@
 
 <script>
 // ─── Datos del equipo ────────────────────────────────────────────────────────
-// El orden aquí DEBE coincidir con fc0…fc6 definidos en el HTML
 const players = [
-  // fc0
   { name:"OMAR RICAURTE",    role:"Director de Planeación y Procesos",  img:"Omar.png"       },
-  // fc1
   { name:"CARLOS VALERO",    role:"Coord. Procesos de Información",     img:"Carlos.png"     },
-  // fc2
   { name:"KAROL MUÑOZ",      role:"Coordinadora de Calidad y Procesos", img:"Karol.png"      },
-  // fc3
   { name:"ALFREDO ÁVILA",    role:"Coord. Inteligencia de Negocios",    img:"Alfredo.png"    },
-  // fc4
   { name:"PAULA BLANCO",     role:"Prof. Desarrollo Estratégico",       img:"Paula.png"      },
-  // fc5
   { name:"¿NOMBRE?",         role:"Prof. Desarrollo Estratégico",       img:"Incognita.png"  },
-  // fc6
-  { name:"DIEGO VILLAREAL", role:"Prof. Desarrollo Estratégico",       img:"Diego.png"      },
+  { name:"DIEGO VILLAREAL",  role:"Prof. Desarrollo Estratégico",       img:"Diego.png"      },
 ];
 
 // ─── Referencias DOM ─────────────────────────────────────────────────────────
@@ -327,7 +310,7 @@ function bindCard(fcEl, p) {
   });
 }
 
-// DT siempre clickeable (Jefferson Arias no está en la animación del campo)
+// DT siempre clickeable
 dtCard.addEventListener("click", () => {
   openModal("JEFFERSON ARIAS", "Rector", "Rector.png");
 });
@@ -370,13 +353,11 @@ async function run() {
   rname.style.opacity = "1";
   await sleep(1600);
 
-  // Ocultar nombre y animar vuelo al dt-card
   rname.style.opacity = "0";
   rc.classList.remove("show");
   rc.classList.add("fly-to-dt");
   await sleep(500);
 
-  // dt-card aparece mientras la carta vuela hacia él
   rc.classList.remove("fly-to-dt");
   dtCard.classList.add("vis");
   await sleep(400);
