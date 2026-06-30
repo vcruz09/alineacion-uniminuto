@@ -77,12 +77,12 @@
 
   /* Fichas campo */
   .fc{position:absolute;width:100px;opacity:0;transform:scale(0) translateY(-15px);z-index:15;cursor:pointer;display:flex;flex-direction:column;align-items:center}
-  .fc-img{width:100px;border-radius:9px;overflow:hidden;border:2.5px solid #FFD700;box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 12px rgba(255,215,0,.3);transition:box-shadow .2s}
+  .fc-img{width:100px;position:relative;border-radius:9px;overflow:hidden;border:2.5px solid #FFD700;box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 12px rgba(255,215,0,.3);transition:box-shadow .2s}
   .fc:hover .fc-img{box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 26px rgba(255,215,0,.75)}
   .fc-img img{width:100%;display:block}
-  .fc-label{margin-top:4px;width:100%;background:rgba(0,0,0,.55);border:1px solid rgba(255,215,0,.5);border-radius:8px;padding:2px 4px;text-align:center;backdrop-filter:blur(4px)}
+  .fc-label{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.72);border-top:1px solid rgba(255,215,0,.5);padding:3px 4px;text-align:center;backdrop-filter:blur(4px)}
   .fc-name{font-family:"Barlow Condensed",sans-serif;font-size:10.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px;line-height:1.15;text-align:center}
-  .fc-role{font-family:"Barlow Condensed",sans-serif;font-size:8px;font-weight:500;color:rgba(255,215,0,.85);text-transform:uppercase;letter-spacing:.3px;line-height:1.2;text-align:center;margin-top:1px}
+  .fc-role{font-family:"Barlow Condensed",sans-serif;font-size:7.5px;font-weight:500;color:rgba(255,215,0,.9);text-transform:uppercase;letter-spacing:.3px;line-height:1.2;text-align:center;margin-top:1px}
   .fc.placed{animation:place .45s cubic-bezier(.34,1.56,.64,1) forwards}
   @keyframes place{0%{opacity:0;transform:scale(0) translateY(-20px)}70%{opacity:1;transform:scale(1.08) translateY(-4px)}100%{opacity:1;transform:scale(1) translateY(0)}}
 
@@ -189,36 +189,29 @@
 
 <!-- Fila 1: Omar (centro-arriba) -->
 <div class="fc" id="fc0" style="left:calc(50% - 50px); top:6%;">
-  <div class="fc-img"><img src="Omar.png" alt="Omar Ricaurte"></div>
-  <div class="fc-label"><div class="fc-name">Omar Ricaurte</div><div class="fc-role">Director de Planeación y Procesos</div></div>
+  <div class="fc-img"><img src="Omar.png" alt="Omar Ricaurte"><div class="fc-label"><div class="fc-name">Omar Ricaurte</div><div class="fc-role">Director de Planeación y Procesos</div></div></div>
 </div>
 
 <!-- Fila 2: Carlos (izq) · Karol (centro) · Alfredo (der) -->
 <div class="fc" id="fc1" style="left:calc(29.2% - 50px); top:36%;">
-  <div class="fc-img"><img src="Carlos.png" alt="Carlos Valero"></div>
-  <div class="fc-label"><div class="fc-name">Carlos Valero</div><div class="fc-role">Coord. Procesos de Información</div></div>
+  <div class="fc-img"><img src="Carlos.png" alt="Carlos Valero"><div class="fc-label"><div class="fc-name">Carlos Valero</div><div class="fc-role">Coord. Procesos de Información</div></div></div>
 </div>
 <div class="fc" id="fc2" style="left:calc(50% - 50px); top:36%;">
-  <div class="fc-img"><img src="Karol.png" alt="Karol Muñoz"></div>
-  <div class="fc-label"><div class="fc-name">Karol Muñoz</div><div class="fc-role">Coordinadora de Calidad y Procesos</div></div>
+  <div class="fc-img"><img src="Karol.png" alt="Karol Muñoz"><div class="fc-label"><div class="fc-name">Karol Muñoz</div><div class="fc-role">Coordinadora de Calidad y Procesos</div></div></div>
 </div>
 <div class="fc" id="fc3" style="left:calc(70.8% - 50px); top:36%;">
-  <div class="fc-img"><img src="Alfredo.png" alt="Alfredo Ávila"></div>
-  <div class="fc-label"><div class="fc-name">Alfredo Ávila</div><div class="fc-role">Coord. Inteligencia de Negocios</div></div>
+  <div class="fc-img"><img src="Alfredo.png" alt="Alfredo Ávila"><div class="fc-label"><div class="fc-name">Alfredo Ávila</div><div class="fc-role">Coord. Inteligencia de Negocios</div></div></div>
 </div>
 
 <!-- Fila 3: Paula (izq) · Incógnita (centro) · Diego (der) -->
 <div class="fc" id="fc4" style="left:calc(29.2% - 50px); top:66%;">
-  <div class="fc-img"><img src="Paula.png" alt="Paula Blanco"></div>
-  <div class="fc-label"><div class="fc-name">Paula Blanco</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
+  <div class="fc-img"><img src="Paula.png" alt="Paula Blanco"><div class="fc-label"><div class="fc-name">Paula Blanco</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div></div>
 </div>
 <div class="fc" id="fc5" style="left:calc(50% - 50px); top:66%;">
-  <div class="fc-img"><img src="Incognita.png" alt="Incógnita"></div>
-  <div class="fc-label"><div class="fc-name">¿Nombre?</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
+  <div class="fc-img"><img src="Incognita.png" alt="Incógnita"><div class="fc-label"><div class="fc-name">¿Nombre?</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div></div>
 </div>
 <div class="fc" id="fc6" style="left:calc(70.8% - 50px); top:66%;">
-  <div class="fc-img"><img src="Diego.png" alt="Diego Villareal"></div>
-  <div class="fc-label"><div class="fc-name">Diego Villareal</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div>
+  <div class="fc-img"><img src="Diego.png" alt="Diego Villareal"><div class="fc-label"><div class="fc-name">Diego Villareal</div><div class="fc-role">Prof. Desarrollo Estratégico</div></div></div>
 </div>
 
 <div id="footer">
