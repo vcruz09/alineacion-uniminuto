@@ -72,7 +72,7 @@
   #rname .r{font-size:11px;color:rgba(255,255,255,.7);letter-spacing:1px}
 
   /* Fichas campo — tamaño aumentado a 88px */
-  .fc{position:absolute;width:88px;border-radius:9px;overflow:hidden;border:2.5px solid #FFD700;box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 12px rgba(255,215,0,.3);opacity:0;transform:scale(0) translateY(-15px);z-index:15;cursor:pointer;transition:box-shadow .2s}
+  .fc{position:absolute;width:95px;border-radius:9px;overflow:hidden;border:2.5px solid #FFD700;box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 12px rgba(255,215,0,.3);opacity:0;transform:scale(0) translateY(-15px);z-index:15;cursor:pointer;transition:box-shadow .2s}
   .fc:hover{box-shadow:0 6px 20px rgba(0,0,0,.6),0 0 26px rgba(255,215,0,.75)}
   .fc img{width:100%;display:block}
   .fc.placed{animation:place .45s cubic-bezier(.34,1.56,.64,1) forwards}
@@ -89,18 +89,18 @@
   /* Modal zoom */
   #modal{position:absolute;inset:0;z-index:80;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;border-radius:20px}
   #modal.open{opacity:1;pointer-events:all}
-  #modal-inner{position:relative;text-align:center;transform:scale(.7);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+  #modal-inner{position:relative;text-align:center;transform:scale(.7);transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center}
   #modal.open #modal-inner{transform:scale(1)}
   #modal-card{width:240px;border-radius:16px;overflow:hidden;border:3px solid #FFD700;box-shadow:0 0 60px rgba(255,215,0,.5)}
   #modal-card img{width:100%;display:block}
   #modal-card .modal-placeholder{width:100%;height:290px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
   #modal-card .modal-placeholder svg{opacity:.3}
   #modal-card .modal-placeholder span{font-family:"Barlow Condensed",sans-serif;font-size:13px;color:rgba(255,215,0,.5);letter-spacing:2px;text-transform:uppercase}
-  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:inline-block}
+  #modal-name{margin-top:12px;background:rgba(0,0,0,.85);border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:8px 20px;display:block;width:240px;text-align:center}
   #modal-name .mn{font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;color:#FFD700;letter-spacing:1px;text-transform:uppercase}
   #modal-name .mr{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:1px}
   #modal-badge{margin-top:6px;display:inline-block;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:20px;padding:3px 14px;font-family:"Barlow Condensed",sans-serif;font-size:11px;letter-spacing:2px;color:rgba(255,215,0,.7);text-transform:uppercase}
-  #modal-close{margin-top:10px;display:inline-block;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;padding:6px 20px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:background .2s}
+  #modal-close{margin-top:10px;display:block;width:240px;text-align:center;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;padding:8px 20px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:background .2s}
   #modal-close:hover{background:rgba(255,215,0,.3)}
 
   #muteBtn{
@@ -228,7 +228,7 @@
     <audio id="bgMusic" loop>
       <source src="musica.mp3" type="audio/mpeg">
     </audio>
-    <div id="modal-badge"></div><br>
+    <div id="modal-badge"></div>
     <button id="modal-close">✕ Cerrar</button>
   </div>
 </div>
